@@ -57,11 +57,13 @@ final class OtherProfileTableViewCell: UITableViewCell {
             let name1 = user!.name1
             let name2 = user!.name2
             let name = name1 + " " + name2
+            let website = user!.website
+            let displayWebsite = String(website.dropFirst(8))
             
             nameLabel.text = name
             bioLabel.text = user!.bio
             
-            websiteButton.setTitle(user!.website, for: .normal)
+            websiteButton.setTitle(displayWebsite, for: .normal)
         }
         
         // followButton.setTitle("foro-".localized(), for: .normal)
@@ -112,7 +114,7 @@ final class OtherProfileTableViewCell: UITableViewCell {
         
         websiteButton.backgroundColor = UIColor.clear
         
-        delegate?.goWeb(website: websiteButton.currentTitle!)
+        delegate?.goWeb(website: "https://" + websiteButton.currentTitle!)
     }
     
     @IBAction func followButtonTouchDown(_ sender: Any) {

@@ -131,6 +131,10 @@ final class WebsiteEditViewController: UIViewController, UIGestureRecognizerDele
         
         view.endEditing(true)
         
+        if websiteTextField.text!.prefix(7) == "http://" {
+            websiteTextField.text = "https://" + websiteTextField.text!.dropFirst(7)
+        }
+        
         let websiteMini = websiteTextField.text!.lowercased()
         
         if let userDefaults = userDefaults {

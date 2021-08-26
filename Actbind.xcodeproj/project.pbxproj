@@ -158,11 +158,6 @@
 		0D89E804268F8AE100687E83 /* OtherProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89E803268F8AE100687E83 /* OtherProfileTableViewCell.swift */; };
 		0D89E80B268F8AF600687E83 /* OtherProfilePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89E80A268F8AF600687E83 /* OtherProfilePostTableViewCell.swift */; };
 		0D97D848267079E100CA0E2C /* UIButton+TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97D847267079E100CA0E2C /* UIButton+TapAction.swift */; };
-		0D9B36E825F71F86002EB629 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36E725F71F86002EB629 /* AudioToolbox.framework */; };
-		0D9B36EA25F71F91002EB629 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36E925F71F91002EB629 /* AVFoundation.framework */; };
-		0D9B36EC25F71F9B002EB629 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36EB25F71F9B002EB629 /* CoreLocation.framework */; };
-		0D9B36EE25F71FA6002EB629 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36ED25F71FA6002EB629 /* Photos.framework */; };
-		0D9B36F025F71FBD002EB629 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36EF25F71FBD002EB629 /* WebKit.framework */; };
 		0D9B36FD25F72082002EB629 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9B36FF25F72082002EB629 /* Localizable.strings */; };
 		0DA9BF532677BC6100ED8EF0 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9BF522677BC6100ED8EF0 /* .swift-version */; };
 		0DA9BF7126782DC200ED8EF0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9BF7026782DC200ED8EF0 /* README.md */; };
@@ -202,7 +197,6 @@
 		0DFBC1FE2690195400800190 /* MyProfilePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBC1FD2690195400800190 /* MyProfilePostTableViewCell.swift */; };
 		0DFBC20026901A7800800190 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFBC1FF26901A7800800190 /* MyProfile.storyboard */; };
 		0DFC925D2601B6BA00364104 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDC93F12601AA7B00103659 /* Info.plist */; };
-		9C222084FFA3549DB1F84C83 /* Pods_Actbind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E16464DEC364F67750F5966 /* Pods_Actbind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -485,12 +479,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D9B36F025F71FBD002EB629 /* WebKit.framework in Frameworks */,
-				0D9B36EC25F71F9B002EB629 /* CoreLocation.framework in Frameworks */,
-				0D9B36EE25F71FA6002EB629 /* Photos.framework in Frameworks */,
-				0D9B36EA25F71F91002EB629 /* AVFoundation.framework in Frameworks */,
-				0D9B36E825F71F86002EB629 /* AudioToolbox.framework in Frameworks */,
-				9C222084FFA3549DB1F84C83 /* Pods_Actbind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,6 +50,7 @@ final class MyProfileTableViewCell: UITableViewCell {
             let name2 = userDefaults.string(forKey: "name2")
             let bio = userDefaults.string(forKey: "bio")
             let website = userDefaults.string(forKey: "website")
+            let displayWebsite = String(website!.dropFirst(8))
             
             let profileimage = userDefaults.string(forKey: "profileimage")
             if profileimage == "Default" {
@@ -63,7 +64,7 @@ final class MyProfileTableViewCell: UITableViewCell {
             userProfileImage.cornerAll(value: 0, fulcrum: "width")
             nameLabel.text = name1! + " " + name2!
             bioLabel.text = bio
-            websiteButton.setTitle(website, for: .normal)
+            websiteButton.setTitle(displayWebsite, for: .normal)
         }
         
         profileEditButton.setTitle("purofi-ruwohennsyuu".localized(), for: .normal)
@@ -114,7 +115,7 @@ final class MyProfileTableViewCell: UITableViewCell {
         
         websiteButton.backgroundColor = UIColor.clear
         
-        delegate?.goWeb(website: websiteButton.currentTitle!)
+        delegate?.goWeb(website: "https://" + websiteButton.currentTitle!)
     }
     
     @IBAction func profileEditButtonTouchDown(_ sender: Any) {
