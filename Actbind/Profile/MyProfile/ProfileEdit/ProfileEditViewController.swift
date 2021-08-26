@@ -24,6 +24,10 @@ class ProfileEditViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var bioEditButton: UIButton!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var bioButton: UIButton!
+    @IBOutlet weak var websiteTitleLabel: UILabel!
+    @IBOutlet weak var websiteEditButton: UIButton!
+    @IBOutlet weak var websiteLabel: UILabel!
+    @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var checkmarkImage: UIImageView!
@@ -44,10 +48,12 @@ class ProfileEditViewController: UIViewController, UIGestureRecognizerDelegate {
                 backButton.tintColor = UIColor(named: "BlackWhite")
                 userProfileImageEditButton.setTitleColor(UIColor(named: "Blue"), for: .normal)
                 bioEditButton.setTitleColor(UIColor(named: "Blue"), for: .normal)
+                websiteEditButton.setTitleColor(UIColor(named: "Blue"), for: .normal)
             } else {
                 backButton.tintColor = UIColor(named: myColor!)
                 userProfileImageEditButton.setTitleColor(UIColor(named: myColor!), for: .normal)
                 bioEditButton.setTitleColor(UIColor(named: myColor!), for: .normal)
+                websiteEditButton.setTitleColor(UIColor(named: myColor!), for: .normal)
             }
         }
 
@@ -59,10 +65,13 @@ class ProfileEditViewController: UIViewController, UIGestureRecognizerDelegate {
         
         bioTitleLabel.text = "jikosyoukai".localized()
         bioEditButton.setTitle("hennsyuu".localized(), for: .normal)
-
+        
+        websiteTitleLabel.text = "webusaito".localized()
+        websiteEditButton.setTitle("hennsyuu".localized(), for: .normal)
+        
         activityView.cornerAll(value: 16, fulcrum: "")
         activityView.isHidden = true
-
+        
         checkmarkImage.image = UIImage(named: "")
         activityLabel.text = "hennkounaiyousetteityuu".localized()
     }
@@ -81,6 +90,7 @@ class ProfileEditViewController: UIViewController, UIGestureRecognizerDelegate {
             let userName = userDefaults.string(forKey: "username")!
             let profileimage = userDefaults.string(forKey: "profileimage")
             let bio = userDefaults.string(forKey: "bio")
+            let website = userDefaults.string(forKey: "website")
             
             if profileimage == "Default" {
                 userProfileImage.image = UIImage(named: "defaultProfileImage")
@@ -97,9 +107,19 @@ class ProfileEditViewController: UIViewController, UIGestureRecognizerDelegate {
                 bioLabel.text = bio
                 bioButton.setTitle("", for: .normal)
             }
+            
+            if website == "" {
+                websiteLabel.text = ""
+                websiteButton.setTitle("webusaito".localized(), for: .normal)
+            } else {
+                websiteLabel.text = website
+                websiteButton.setTitle("", for: .normal)
+            }
         }
         
         bioButton.setTitleColor(UIColor(named: "TextFieldText"), for: .normal)
+        
+        websiteButton.setTitleColor(UIColor(named: "TextFieldText"), for: .normal)
     }
     
     @IBAction func userProfileImageEditButtonTouchDown(_ sender: Any) {
@@ -373,7 +393,53 @@ class ProfileEditViewController: UIViewController, UIGestureRecognizerDelegate {
         
         navigationController?.pushViewController(nextVC!, animated: true)
     }
+    
+    @IBAction func websiteEditButtonTouchDown(_ sender: Any) {
+        if let userDefaults = userDefaults {
+            let myColor = userDefaults.string(forKey: "mycolor")
 
+            if myColor == "Original" {
+                websiteEditButton.backgroundColor = UIColor(named: "BlueHalf")
+            } else if myColor == "Red" {
+                websiteEditButton.backgroundColor = UIColor(named: "RedHalf")
+            } else if myColor == "Orange" {
+                websiteEditButton.backgroundColor = UIColor(named: "OrangeHalf")
+            } else if myColor == "Yellow" {
+                websiteEditButton.backgroundColor = UIColor(named: "YellowHalf")
+            } else if myColor == "Green" {
+                websiteEditButton.backgroundColor = UIColor(named: "GreenHalf")
+            } else if myColor == "Blue" {
+                websiteEditButton.backgroundColor = UIColor(named: "BlueHalf")
+            } else {
+                websiteEditButton.backgroundColor = UIColor(named: "PurpleHalf")
+            }
+        }
+    }
+    
+    @IBAction func websiteEditButtonTouchDragOutside(_ sender: Any) {
+        websiteEditButton.backgroundColor = UIColor.clear
+    }
+    
+    @IBAction func websiteEditButtonTouchUpInside(_ sender: Any) {
+        UISelectionFeedbackGenerator().selectionChanged()
+        
+        websiteEditButton.backgroundColor = UIColor.clear
+        
+        let storyBoard = UIStoryboard(name: "WebsiteEdit", bundle: nil)
+        let nextVC = storyBoard.instantiateInitialViewController()
+        
+        navigationController?.pushViewController(nextVC!, animated: true)
+    }
+    
+    @IBAction func websiteButtonTouchUpInside(_ sender: Any) {
+        UISelectionFeedbackGenerator().selectionChanged()
+        
+        let storyBoard = UIStoryboard(name: "WebsiteEdit", bundle: nil)
+        let nextVC = storyBoard.instantiateInitialViewController()
+        
+        navigationController?.pushViewController(nextVC!, animated: true)
+    }
+    
     @IBAction func backBottonAction(_ sender: Any) {
         UISelectionFeedbackGenerator().selectionChanged()
         

@@ -12,7 +12,7 @@
         <!--UpdateViewController-->
         <scene sceneID="0NK-x2-IWi">
             <objects>
-                <viewController storyboardIdentifier="Update" title="UpdateViewController" id="lid-HO-hpv" customClass="UpdateViewController" customModule="Actbind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Update" title="UpdateViewController" modalPresentationStyle="fullScreen" id="lid-HO-hpv" customClass="UpdateViewController" customModule="Actbind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLn-6z-rWe" userLabel="Background View">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,7 +11,7 @@ final class AboutViewController: UIViewController, UIGestureRecognizerDelegate {
     let userDefaults = UserDefaults(suiteName: "group.com.actbind")
     
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-
+    
     @IBOutlet weak var navigationBarTitle: UINavigationItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var termsOfServiceView: UIView!
@@ -92,8 +92,21 @@ final class AboutViewController: UIViewController, UIGestureRecognizerDelegate {
         privacyPolicyLabel.text = "puraibasi-porisi-".localized()
         communityGuidelinesLabel.text = "komyunitexigaidorainn".localized()
         openSourceLibraryLabel.text = "o-punnso-suraiburari".localized()
-
-        versionText.text = "ba-jyonn".localized() + " " + version
+        
+        AppTypeCompare.toAppStoreVersion { type in
+            switch type {
+            case .release:
+                DispatchQueue.main.async {
+                    self.versionText.text = "ba-jyonn".localized() + " " + self.version
+                }
+            case .beta:
+                DispatchQueue.main.async {
+                    self.versionText.text = "ba-jyonn".localized() + " " + self.version + " (Beta)"
+                }
+            case .error:
+                print("エラー")
+            }
+        }
     }
     
     // 画面に表示される直前に呼ばれます。

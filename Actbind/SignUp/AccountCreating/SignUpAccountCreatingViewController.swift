@@ -96,6 +96,10 @@ final class SignUpAccountCreatingViewController: UIViewController {
                     let name2: String
                     let password: String
                     let profileimageUrl: String
+                    let website: String
+                    let accountType: String
+                    let accountCategory: String
+                    let verification: String
                 }
                 
                 let decoder = JSONDecoder()
@@ -116,11 +120,13 @@ final class SignUpAccountCreatingViewController: UIViewController {
                         userDefaults.setValue(user.profileimageUrl, forKeyPath: "profileimage")
                         userDefaults.setValue(user.bio, forKeyPath: "bio")
                         userDefaults.setValue(user.myColor, forKeyPath: "mycolor")
+                        userDefaults.setValue(user.website, forKeyPath: "website")
+                        userDefaults.setValue(user.accountType, forKeyPath: "accounttype")
+                        userDefaults.setValue(user.accountCategory, forKeyPath: "accountcategory")
+                        userDefaults.setValue(user.verification, forKeyPath: "verification")
                         userDefaults.setValue("On", forKeyPath: "savephoto")
                         let likepostidArray: [Int] = []
                         userDefaults.setValue(likepostidArray, forKey: "likepostid")
-                        let followuseridArray: [Int] = []
-                        userDefaults.setValue(followuseridArray, forKey: "followuserid")
                         // ログイン！
                         userDefaults.setValue(true, forKeyPath: "loginrecord")
                     }
@@ -146,16 +152,6 @@ final class SignUpAccountCreatingViewController: UIViewController {
     func apiPostSuccess() {
         let storyBoard = UIStoryboard(name: "SignUpOk", bundle: nil)
         let nextVC = storyBoard.instantiateInitialViewController()
-        let vc = (nextVC as? SignUpOkViewController)
-        
-        // 値の設定
-        vc!.name1 = name1
-        vc!.name2 = name2
-        vc!.mailaddress = mailaddress
-        vc!.password = password
-        vc!.gender = gender
-        vc!.birthday = birthday
-        vc!.username = username
         
         navigationController?.pushViewController(nextVC!, animated: false)
     }

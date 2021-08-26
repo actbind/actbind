@@ -17,6 +17,9 @@
 		0D0DB32B25F736A20027BCB8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0DB32A25F736A20027BCB8 /* Setting.storyboard */; };
 		0D0DB32E25F736A80027BCB8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DB32D25F736A80027BCB8 /* SettingViewController.swift */; };
 		0D0DB34525F737A50027BCB8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DB34425F737A40027BCB8 /* MainViewController.swift */; };
+		0D11C2DA26D669BA00A7CD75 /* UrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D11C2D926D669BA00A7CD75 /* UrlViewController.swift */; };
+		0D11C2E226D6BFBC00A7CD75 /* WebsiteEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D11C2E126D6BFBC00A7CD75 /* WebsiteEdit.storyboard */; };
+		0D11C2E426D6BFE800A7CD75 /* WebsiteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D11C2E326D6BFE800A7CD75 /* WebsiteEditViewController.swift */; };
 		0D12525126A7173C00573701 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D12525026A7173C00573701 /* SearchViewController.swift */; };
 		0D12525326A7174500573701 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D12525226A7174500573701 /* Search.storyboard */; };
 		0D12525A26A7A59D00573701 /* ColorTagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D12525926A7A59D00573701 /* ColorTagSearchViewController.swift */; };
@@ -150,14 +153,11 @@
 		0D7F65FC260B0DCD00418F48 /* UserDefaults+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F65FB260B0DCD00418F48 /* UserDefaults+Remove.swift */; };
 		0D7F6601260B0DFB00418F48 /* String+CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F6600260B0DFB00418F48 /* String+CharacterSet.swift */; };
 		0D7F6606260B0E3C00418F48 /* Date+PostDateNotationChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F6605260B0E3C00418F48 /* Date+PostDateNotationChange.swift */; };
+		0D80560526D5FF9100361EB2 /* AppVersionCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80560426D5FF9100361EB2 /* AppVersionCompare.swift */; };
+		0D80560726D6064E00361EB2 /* AppTypeCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80560626D6064E00361EB2 /* AppTypeCompare.swift */; };
 		0D89E804268F8AE100687E83 /* OtherProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89E803268F8AE100687E83 /* OtherProfileTableViewCell.swift */; };
 		0D89E80B268F8AF600687E83 /* OtherProfilePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89E80A268F8AF600687E83 /* OtherProfilePostTableViewCell.swift */; };
 		0D97D848267079E100CA0E2C /* UIButton+TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97D847267079E100CA0E2C /* UIButton+TapAction.swift */; };
-		0D9B36E825F71F86002EB629 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36E725F71F86002EB629 /* AudioToolbox.framework */; };
-		0D9B36EA25F71F91002EB629 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36E925F71F91002EB629 /* AVFoundation.framework */; };
-		0D9B36EC25F71F9B002EB629 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36EB25F71F9B002EB629 /* CoreLocation.framework */; };
-		0D9B36EE25F71FA6002EB629 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36ED25F71FA6002EB629 /* Photos.framework */; };
-		0D9B36F025F71FBD002EB629 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9B36EF25F71FBD002EB629 /* WebKit.framework */; };
 		0D9B36FD25F72082002EB629 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9B36FF25F72082002EB629 /* Localizable.strings */; };
 		0DA9BF532677BC6100ED8EF0 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9BF522677BC6100ED8EF0 /* .swift-version */; };
 		0DA9BF7126782DC200ED8EF0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0DA9BF7026782DC200ED8EF0 /* README.md */; };
@@ -197,7 +197,6 @@
 		0DFBC1FE2690195400800190 /* MyProfilePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBC1FD2690195400800190 /* MyProfilePostTableViewCell.swift */; };
 		0DFBC20026901A7800800190 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFBC1FF26901A7800800190 /* MyProfile.storyboard */; };
 		0DFC925D2601B6BA00364104 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDC93F12601AA7B00103659 /* Info.plist */; };
-		9C222084FFA3549DB1F84C83 /* Pods_Actbind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E16464DEC364F67750F5966 /* Pods_Actbind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +241,9 @@
 		0D0DB32A25F736A20027BCB8 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		0D0DB32D25F736A80027BCB8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0D0DB34425F737A40027BCB8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0D11C2D926D669BA00A7CD75 /* UrlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlViewController.swift; sourceTree = "<group>"; };
+		0D11C2E126D6BFBC00A7CD75 /* WebsiteEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebsiteEdit.storyboard; sourceTree = "<group>"; };
+		0D11C2E326D6BFE800A7CD75 /* WebsiteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEditViewController.swift; sourceTree = "<group>"; };
 		0D12525026A7173C00573701 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D12525226A7174500573701 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		0D12525926A7A59D00573701 /* ColorTagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSearchViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +378,8 @@
 		0D7F65FB260B0DCD00418F48 /* UserDefaults+Remove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Remove.swift"; sourceTree = "<group>"; };
 		0D7F6600260B0DFB00418F48 /* String+CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CharacterSet.swift"; sourceTree = "<group>"; };
 		0D7F6605260B0E3C00418F48 /* Date+PostDateNotationChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+PostDateNotationChange.swift"; sourceTree = "<group>"; };
+		0D80560426D5FF9100361EB2 /* AppVersionCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCompare.swift; sourceTree = "<group>"; };
+		0D80560626D6064E00361EB2 /* AppTypeCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypeCompare.swift; sourceTree = "<group>"; };
 		0D89E803268F8AE100687E83 /* OtherProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileTableViewCell.swift; sourceTree = "<group>"; };
 		0D89E80A268F8AF600687E83 /* OtherProfilePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfilePostTableViewCell.swift; sourceTree = "<group>"; };
 		0D97D847267079E100CA0E2C /* UIButton+TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TapAction.swift"; sourceTree = "<group>"; };
@@ -475,12 +479,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D9B36F025F71FBD002EB629 /* WebKit.framework in Frameworks */,
-				0D9B36EC25F71F9B002EB629 /* CoreLocation.framework in Frameworks */,
-				0D9B36EE25F71FA6002EB629 /* Photos.framework in Frameworks */,
-				0D9B36EA25F71F91002EB629 /* AVFoundation.framework in Frameworks */,
-				0D9B36E825F71F86002EB629 /* AudioToolbox.framework in Frameworks */,
-				9C222084FFA3549DB1F84C83 /* Pods_Actbind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +502,15 @@
 				0D0712B82612385C00286C6E /* CornerRadius+Part.swift */,
 			);
 			path = CornerRadius;
+			sourceTree = "<group>";
+		};
+		0D11C2DE26D6BF7C00A7CD75 /* WebsiteEdit */ = {
+			isa = PBXGroup;
+			children = (
+				0D11C2E126D6BFBC00A7CD75 /* WebsiteEdit.storyboard */,
+				0D11C2E326D6BFE800A7CD75 /* WebsiteEditViewController.swift */,
+			);
+			path = WebsiteEdit;
 			sourceTree = "<group>";
 		};
 		0D12524A26A7171C00573701 /* Search */ = {
@@ -579,6 +586,8 @@
 				0D9B373125F721F3002EB629 /* Actbind.entitlements */,
 				0D23792725F71C2500E43552 /* AppDelegate.swift */,
 				0D23792925F71C2500E43552 /* SceneDelegate.swift */,
+				0D80560426D5FF9100361EB2 /* AppVersionCompare.swift */,
+				0D80560626D6064E00361EB2 /* AppTypeCompare.swift */,
 				0D7F65C7260B02A000418F48 /* Extension */,
 				0D9B373425F72217002EB629 /* InputTextCheck */,
 				0D9B373D25F72243002EB629 /* Update */,
@@ -733,6 +742,7 @@
 				0D22ED1925F731F6009190F9 /* MailAddressViewController.swift */,
 				0D22ED1C25F731FE009190F9 /* PasswordViewController.swift */,
 				0D22ED1F25F731FF009190F9 /* UserNameViewController.swift */,
+				0D11C2D926D669BA00A7CD75 /* UrlViewController.swift */,
 				0D22ED1D25F731FF009190F9 /* OnlyNumberViewController.swift */,
 				0D22ED1E25F731FF009190F9 /* OnlyUnderbarViewController.swift */,
 			);
@@ -1030,6 +1040,7 @@
 				0D22EDC125F73441009190F9 /* ProfileEditViewController.swift */,
 				0D9B375725F72459002EB629 /* ProfileImageEdit */,
 				0D9B375625F72455002EB629 /* BioEdit */,
+				0D11C2DE26D6BF7C00A7CD75 /* WebsiteEdit */,
 			);
 			path = ProfileEdit;
 			sourceTree = "<group>";
@@ -1447,6 +1458,7 @@
 				0D22ED9D25F733BA009190F9 /* PostColor.storyboard in Resources */,
 				0DA9BF532677BC6100ED8EF0 /* .swift-version in Resources */,
 				0D22ED8825F73373009190F9 /* Home.storyboard in Resources */,
+				0D11C2E226D6BFBC00A7CD75 /* WebsiteEdit.storyboard in Resources */,
 				0D22ED6725F732B1009190F9 /* SignUpCheck.storyboard in Resources */,
 				0D0DB32B25F736A20027BCB8 /* Setting.storyboard in Resources */,
 				0D79BE5226D24F1C00C5ACFA /* OpenSourceLibrary.html in Resources */,
@@ -1598,6 +1610,7 @@
 				0D63724126A922D500C2ADEE /* AccountSearchViewController.swift in Sources */,
 				0D22EDB825F7341A009190F9 /* MyProfileViewController.swift in Sources */,
 				0DFBC1FE2690195400800190 /* MyProfilePostTableViewCell.swift in Sources */,
+				0D11C2E426D6BFE800A7CD75 /* WebsiteEditViewController.swift in Sources */,
 				0DFBC1FC269018BA00800190 /* MyProfile.swift in Sources */,
 				0D5D285E260B53FE00AAB0F6 /* Date->String.swift in Sources */,
 				0D7F65DC260B0C2A00418F48 /* String+Replacement.swift in Sources */,
@@ -1613,13 +1626,16 @@
 				0D22EE1825F7351E009190F9 /* ChangeGenderViewController.swift in Sources */,
 				0D22ED2225F731FF009190F9 /* OnlyUnderbarViewController.swift in Sources */,
 				0D22ED6125F732A4009190F9 /* SignUpUserNameViewController.swift in Sources */,
+				0D80560726D6064E00361EB2 /* AppTypeCompare.swift in Sources */,
 				0D22EDBD25F73438009190F9 /* BioEditViewController.swift in Sources */,
 				0D7F6601260B0DFB00418F48 /* String+CharacterSet.swift in Sources */,
+				0D11C2DA26D669BA00A7CD75 /* UrlViewController.swift in Sources */,
 				0D97D848267079E100CA0E2C /* UIButton+TapAction.swift in Sources */,
 				0D22ED4B25F73286009190F9 /* SignUpPasswordPageViewController.swift in Sources */,
 				0D22ED5225F7328F009190F9 /* SignUpGenderPageViewController.swift in Sources */,
 				0D0DB34525F737A50027BCB8 /* MainViewController.swift in Sources */,
 				0D22ED3925F73257009190F9 /* SignUpNameViewController.swift in Sources */,
+				0D80560526D5FF9100361EB2 /* AppVersionCompare.swift in Sources */,
 				0D7F65EA260B0D0400418F48 /* UIImage+CroppingToCenterSquare.swift in Sources */,
 				0DD4B4352696018F0046416F /* Welcome.swift in Sources */,
 				0D23792825F71C2500E43552 /* AppDelegate.swift in Sources */,
@@ -1917,7 +1933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.actbind.Actbind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1940,7 +1956,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.actbind.Actbind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

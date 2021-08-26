@@ -52,6 +52,8 @@ final class SignUpNameViewController: UIViewController {
     @IBAction func name1TextFieldDidEndOnExit(_ sender: Any) {}
 
     @IBAction func name1TextFieldEditingChanged(_ sender: Any) {
+        name1TextField.text = name1TextField.text!.stringCharacterSetRemove(characterSet: .whitespaces)
+        
         // name1TextFieldが入力されていない時
         if name1TextField.text == "" {
             nextButton.isEnabled = false
@@ -82,6 +84,8 @@ final class SignUpNameViewController: UIViewController {
     @IBAction func name2TextFieldDidEndOnExit(_ sender: Any) {}
 
     @IBAction func name2TextFieldEditingChanged(_ sender: Any) {
+        name2TextField.text = name2TextField.text!.stringCharacterSetRemove(characterSet: .whitespaces)
+        
         // name1TextFieldが入力されていない時
         if name1TextField.text == "" {
             nextButton.isEnabled = false

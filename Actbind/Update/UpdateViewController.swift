@@ -20,15 +20,7 @@ final class UpdateViewController: UIViewController {
 
         updateLabel.text = "atarasiiba-jyonnni".localized()
 
-        if let userDefaults = userDefaults {
-            let myColor = userDefaults.string(forKey: "mycolor")
-
-            if myColor == "Original" {
-                updateButton.backgroundColor = UIColor(named: "Blue")
-            } else {
-                updateButton.backgroundColor = UIColor(named: myColor!)
-            }
-        }
+        updateButton.backgroundColor = UIColor(named: "Blue")
 
         updateButton.setTitle("appude-to".localized(), for: .normal)
     }
@@ -47,7 +39,7 @@ final class UpdateViewController: UIViewController {
         UIButton().uiButtonTapOff(item: updateButton, itemRight: updateButtonRight, itemLeft: updateButtonLeft)
 
         // TestFlightアプリのURL
-        let url = URL(string: "https://itunes.apple.com/jp/app/apple-store/id899247664?mt=8")!
+        let url = URL(string: "https://apps.apple.com/app/actbind/id1579280491")!
 
         // URLを開けるかをチェックする
         if UIApplication.shared.canOpenURL(url) {

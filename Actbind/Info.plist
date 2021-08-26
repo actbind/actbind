@@ -17,15 +17,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>20210822235033</string>
+	<string>20210826093055</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This will allow you to take a picture.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This will allow you to use some of Actbind's features, personalize your content, search for locations, and more.</string>
-	<key>NSMainNibFile</key>
-	<string>Main</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This allows you to take advantage of features such as video recording and voice search.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -53,6 +51,8 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

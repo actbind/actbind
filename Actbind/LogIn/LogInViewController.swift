@@ -27,7 +27,21 @@ final class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        AppVersionCompare.toAppStoreVersion { type in
+            switch type {
+            case .latest: break
+            case .old:
+                DispatchQueue.main.async {
+                    let storyBoard = UIStoryboard(name: "Update", bundle: nil)
+                    let nextVC = storyBoard.instantiateInitialViewController()
+                    self.present(nextVC!, animated: false) {}
+                }
+            case .error:
+                print("エラー")
+            }
+        }
+        
         mailAddressTextField.uiTextFieldSetting(placeholder: "me-ruadoresu".localized())
 
         passwordTextField.uiTextFieldSetting(placeholder: "pasuwa-do".localized())
@@ -304,6 +318,10 @@ final class LogInViewController: UIViewController {
                     let name2: String
                     let password: String
                     let profileimageUrl: String
+                    let website: String
+                    let accountType: String
+                    let accountCategory: String
+                    let verification: String
                 }
                 
                 let decoder = JSONDecoder()
@@ -328,9 +346,13 @@ final class LogInViewController: UIViewController {
                             userDefaults.setValue(user.profileimageUrl, forKeyPath: "profileimage")
                             userDefaults.setValue(user.bio, forKeyPath: "bio")
                             userDefaults.setValue(user.myColor, forKeyPath: "mycolor")
+                            userDefaults.setValue(user.website, forKeyPath: "website")
+                            userDefaults.setValue(user.accountType, forKeyPath: "accounttype")
+                            userDefaults.setValue(user.accountCategory, forKeyPath: "accountcategory")
+                            userDefaults.setValue(user.verification, forKeyPath: "verification")
                             userDefaults.setValue("On", forKeyPath: "savephoto")
                         }
-                        print("likeapiへ")
+                        
                         self.apiLike(userId: user.userId)
                         // 登録時のパスワードと入力されたパスワードが違う時
                     } else {
@@ -436,7 +458,6 @@ final class LogInViewController: UIViewController {
             
             if response.statusCode == 200 {
                 let json = String(data: data, encoding: .utf8)!
-                print(json)
                 
                 if json == "[]" {
                     if let userDefaults = self.userDefaults {
@@ -460,8 +481,6 @@ final class LogInViewController: UIViewController {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let decoded: [Like] = try! decoder.decode([Like].self, from: data)
                 for like in decoded {
-                    print(like)
-                    
                     if let userDefaults = self.userDefaults {
                         if userDefaults.array(forKey: "likepostid") as? [Int] == nil {
                             var likepostidArray: [Int] = []

@@ -148,6 +148,10 @@
 "jikosyoukai" = "自己紹介";
 "jikosyoukaiwohennsyuu" = "自己紹介を編集";
 "jikosyoukaiwonyuuryoku" = "自己紹介を入力...";
+"webusaito" = "ウェブサイト";
+"webusaitowohennsyuu" = "ウェブサイトを編集";
+"webusaitowonyuuryoku" = "ウェブサイトを入力...";
+"webusaitoera-" = "正しいウェブサイトを入力してください。";
 "foro-" = "フォローする";
 "foro-tyuu" = "フォロー中";
 "forowa-" = "フォロワー";

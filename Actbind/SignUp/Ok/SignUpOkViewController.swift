@@ -8,14 +8,6 @@
 import UIKit
 
 final class SignUpOkViewController: UIViewController {
-    var name1 = ""
-    var name2 = ""
-    var mailaddress = ""
-    var password = ""
-    var gender = 0
-    var birthday = ""
-    var username = ""
-
     @IBOutlet weak var signUpOkTitleLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var startButtonRight: NSLayoutConstraint!

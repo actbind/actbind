@@ -148,6 +148,10 @@
 "jikosyoukai" = "عرف نفسك قدم نفسك";
 "jikosyoukaiwohennsyuu" = "تحرير المقدمة الذاتية";
 "jikosyoukaiwonyuuryoku" = "أدخل المقدمة الذاتية الخاصة بك ...";
+"webusaito" = "موقع الكتروني";
+"webusaitowohennsyuu" = "تحرير الموقع";
+"webusaitowonyuuryoku" = "أدخل الموقع ...";
+"webusaitoera-" = "الرجاء إدخال الموقع الصحيح.";
 "foro-" = "يتبع";
 "foro-tyuu" = "التالية";
 "forowa-" = "تابع";

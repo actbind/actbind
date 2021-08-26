@@ -36,6 +36,10 @@ final class OtherProfileViewController: UIViewController, UIGestureRecognizerDel
         let name2: String
         let password: String
         let profileimageUrl: String
+        let website: String
+        let accountType: String
+        let accountCategory: String
+        let verification: String
     }
     
     static var allOtherUsers: [OtherUsers] = []
@@ -319,7 +323,7 @@ extension OtherProfileViewController: UITableViewDataSource {
             // ここからの内容がセルに反映される
             // 順番にcellの方のpostに送っていく
             if OtherProfileViewController.allOtherUsers.count == 0 {
-                profileCell.user = OtherUsers(userId: 0, userName: "", bio: "", birthday: "", createDate: "", deleteDate: "", gender: 0, mailaddress: "", myColor: "", name1: "", name2: "", password: "", profileimageUrl: "")
+                profileCell.user = OtherUsers(userId: 0, userName: "", bio: "", birthday: "", createDate: "", deleteDate: "", gender: 0, mailaddress: "", myColor: "", name1: "", name2: "", password: "", profileimageUrl: "", website: "", accountType: "", accountCategory: "", verification: "")
             } else {
                 profileCell.user = OtherProfileViewController.allOtherUsers[indexPath.row]
             }
@@ -346,6 +350,18 @@ extension OtherProfileViewController: UITableViewDataSource {
                 return profilePostCell
             }
         }
+    }
+    
+    func goWeb(website: String) {
+        let storyBoard = UIStoryboard(name: "Web", bundle: nil)
+        let nextVC = storyBoard.instantiateInitialViewController()
+        let nav = (nextVC as? UINavigationController)
+        let vc = (nav?.topViewController as! WebViewController)
+        
+        // 値の設定
+        vc.weburl = website
+        
+        present(nextVC!, animated: true) {}
     }
     
     func apiLikePost(userId: Int, postId: Int) {

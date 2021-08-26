@@ -22,15 +22,15 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="255" id="Rea-i4-9ZK" customClass="OtherProfileTableViewCell" customModule="Actbind" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="255"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="278" id="Rea-i4-9ZK" customClass="OtherProfileTableViewCell" customModule="Actbind" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="278"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rea-i4-9ZK" id="G6q-L3-Jwm">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="255"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="278"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-R7-1Kl" userLabel="Cell View">
-                                                    <rect key="frame" x="20" y="20" width="350" height="215"/>
+                                                    <rect key="frame" x="20" y="20" width="350" height="238"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGd-01-Spx">
                                                             <rect key="frame" x="15" y="150" width="320" height="24"/>
@@ -57,18 +57,42 @@
                                                             </constraints>
                                                             <imageReference key="image" image="defaultProfileImage"/>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-4f-ZVd">
+                                                            <rect key="frame" x="129" y="208" width="92" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="2AN-ST-4tJ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <state key="normal" title="ウェブサイト">
+                                                                <color key="titleColor" name="Blue"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="websiteButtonTouchDown:" destination="Rea-i4-9ZK" eventType="touchDown" id="XsF-NE-KZf"/>
+                                                                <action selector="websiteButtonTouchDragOutside:" destination="Rea-i4-9ZK" eventType="touchDragOutside" id="K1i-6Z-cph"/>
+                                                                <action selector="websiteButtonTouchUpInside:" destination="Rea-i4-9ZK" eventType="touchUpInside" id="gzG-CA-WmI"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" name="Cell"/>
                                                     <constraints>
+                                                        <constraint firstItem="2XQ-4f-ZVd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jgc-R7-1Kl" secondAttribute="leading" constant="15" id="2tz-LK-76V"/>
                                                         <constraint firstItem="PDD-vY-sbq" firstAttribute="top" secondItem="eGd-01-Spx" secondAttribute="bottom" constant="8" id="3xc-43-KPJ"/>
                                                         <constraint firstItem="PDD-vY-sbq" firstAttribute="leading" secondItem="Jgc-R7-1Kl" secondAttribute="leading" constant="15" id="6Kn-CA-6wr"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2XQ-4f-ZVd" secondAttribute="trailing" constant="15" id="Czt-3Z-CVi"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2XQ-4f-ZVd" secondAttribute="bottom" constant="15" id="Jt8-kd-Ter"/>
                                                         <constraint firstAttribute="trailing" secondItem="eGd-01-Spx" secondAttribute="trailing" constant="15" id="L9e-6b-XZt"/>
                                                         <constraint firstItem="eGd-01-Spx" firstAttribute="top" secondItem="C2y-s8-Aaf" secondAttribute="bottom" constant="15" id="VBb-YX-iUV"/>
                                                         <constraint firstItem="eGd-01-Spx" firstAttribute="leading" secondItem="Jgc-R7-1Kl" secondAttribute="leading" constant="15" id="a2f-oy-cUA"/>
                                                         <constraint firstAttribute="trailing" secondItem="PDD-vY-sbq" secondAttribute="trailing" constant="15" id="bcs-kU-D9W"/>
-                                                        <constraint firstAttribute="bottom" secondItem="PDD-vY-sbq" secondAttribute="bottom" constant="15" id="cjn-Uj-ASD"/>
+                                                        <constraint firstItem="2XQ-4f-ZVd" firstAttribute="centerX" secondItem="Jgc-R7-1Kl" secondAttribute="centerX" id="fE5-Qk-ioE"/>
                                                         <constraint firstItem="C2y-s8-Aaf" firstAttribute="centerX" secondItem="Jgc-R7-1Kl" secondAttribute="centerX" id="jqr-Hl-nmM"/>
                                                         <constraint firstItem="C2y-s8-Aaf" firstAttribute="top" secondItem="Jgc-R7-1Kl" secondAttribute="top" constant="15" id="kRs-a7-6FK"/>
+                                                        <constraint firstItem="2XQ-4f-ZVd" firstAttribute="top" secondItem="PDD-vY-sbq" secondAttribute="bottom" constant="8" id="nwd-MO-g4r"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -80,9 +104,9 @@
                                             <color key="backgroundColor" name="Background"/>
                                             <constraints>
                                                 <constraint firstItem="Jgc-R7-1Kl" firstAttribute="leading" secondItem="G6q-L3-Jwm" secondAttribute="leading" constant="20" id="4ke-0E-ART"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jgc-R7-1Kl" secondAttribute="bottom" constant="20" id="BDg-3G-YZc"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jgc-R7-1Kl" secondAttribute="trailing" constant="20" id="R8O-b7-glV"/>
                                                 <constraint firstItem="Jgc-R7-1Kl" firstAttribute="top" secondItem="G6q-L3-Jwm" secondAttribute="top" constant="20" id="a8B-ia-VHJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Jgc-R7-1Kl" secondAttribute="bottom" constant="20" id="rnB-wq-H20"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Background"/>
@@ -91,10 +115,13 @@
                                             <outlet property="bioLabelTop" destination="3xc-43-KPJ" id="jq5-IY-MTF"/>
                                             <outlet property="nameLabel" destination="eGd-01-Spx" id="54t-bi-0XM"/>
                                             <outlet property="userProfileImage" destination="C2y-s8-Aaf" id="ZAz-MH-cRk"/>
+                                            <outlet property="websiteButton" destination="2XQ-4f-ZVd" id="YjA-QN-CgM"/>
+                                            <outlet property="websiteButtonHeight" destination="2AN-ST-4tJ" id="naK-RK-p2t"/>
+                                            <outlet property="websiteButtonTop" destination="nwd-MO-g4r" id="GfT-1E-QbO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noPostCell" rowHeight="174" id="ZV0-8g-IjD" customClass="OtherProfileNoPostTableViewCell" customModule="Actbind" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="279.33333396911621" width="390" height="174"/>
+                                        <rect key="frame" x="0.0" y="302.33333396911621" width="390" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZV0-8g-IjD" id="MrR-vg-erG">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="174"/>
@@ -144,7 +171,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profilePostCell" rowHeight="543" id="b2T-oq-TWR" customClass="OtherProfilePostTableViewCell" customModule="Actbind" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="453.33333396911621" width="390" height="543"/>
+                                        <rect key="frame" x="0.0" y="476.33333396911621" width="390" height="543"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b2T-oq-TWR" id="cJ1-oB-It1">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="543"/>
@@ -400,6 +427,9 @@
         </namedColor>
         <namedColor name="BlackWhite">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue">
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Cell">
             <color red="0.99599999189376831" green="1" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

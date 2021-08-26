@@ -148,6 +148,10 @@
 "jikosyoukai" = "Bio";
 "jikosyoukaiwohennsyuu" = "Editar biografia";
 "jikosyoukaiwonyuuryoku" = "Entre na biografia ...";
+"webusaito" = "Local na rede Internet";
+"webusaitowohennsyuu" = "Editar site";
+"webusaitowonyuuryoku" = "Entre no site ...";
+"webusaitoera-" = "Por favor, insira o site correto.";
 "foro-" = "Seguir";
 "foro-tyuu" = "Segue";
 "forowa-" = "Seguidores";

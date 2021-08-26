@@ -87,6 +87,8 @@ final class ChangeNameViewController: UIViewController, UIGestureRecognizerDeleg
     @IBAction func name1TextFieldDidEndOnExit(_ sender: Any) {}
 
     @IBAction func name1TextFieldEditingChanged(_ sender: Any) {
+        name1TextField.text = name1TextField.text!.stringCharacterSetRemove(characterSet: .whitespaces)
+        
         if let userDefaults = userDefaults {
             let myColor = userDefaults.string(forKey: "mycolor")
 
@@ -141,6 +143,8 @@ final class ChangeNameViewController: UIViewController, UIGestureRecognizerDeleg
     @IBAction func name2TextFieldDidEndOnExit(_ sender: Any) {}
     
     @IBAction func name2TextFieldEditingChanged(_ sender: Any) {
+        name2TextField.text = name2TextField.text!.stringCharacterSetRemove(characterSet: .whitespaces)
+        
         if let userDefaults = userDefaults {
             let myColor = userDefaults.string(forKey: "mycolor")
 

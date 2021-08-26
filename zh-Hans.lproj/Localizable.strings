@@ -148,6 +148,10 @@
 "jikosyoukai" = "生化";
 "jikosyoukaiwohennsyuu" = "编辑简历";
 "jikosyoukaiwonyuuryoku" = "输入生物...";
+"webusaito" = "网站";
+"webusaitowohennsyuu" = "编辑网站";
+"webusaitowonyuuryoku" = "进入网站...";
+"webusaitoera-" = "请输入正确的网站。";
 "foro-" = "跟随";
 "foro-tyuu" = "以下";
 "forowa-" = "追随者";

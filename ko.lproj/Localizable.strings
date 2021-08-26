@@ -148,6 +148,10 @@
 "jikosyoukai" = "자기 소개";
 "jikosyoukaiwohennsyuu" = "자기 소개 수정";
 "jikosyoukaiwonyuuryoku" = "자기 소개서 입력 ...";
+"webusaito" = "웹사이트";
+"webusaitowohennsyuu" = "웹사이트 수정";
+"webusaitowonyuuryoku" = "홈페이지에 들어가...";
+"webusaitoera-" = "올바른 웹사이트를 입력하세요.";
 "foro-" = "따르다";
 "foro-tyuu" = "수행원";
 "forowa-" = "추종자";

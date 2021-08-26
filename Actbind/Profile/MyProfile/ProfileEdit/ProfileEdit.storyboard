@@ -96,13 +96,13 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-YJ-hqP">
-                                            <rect key="frame" x="20" y="250" width="350" height="30"/>
+                                            <rect key="frame" x="20" y="245" width="350" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" name="BlackWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-MW-VuQ">
-                                            <rect key="frame" x="20" y="250" width="350" height="30"/>
+                                            <rect key="frame" x="20" y="245" width="350" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="自己紹介">
                                                 <color key="titleColor" name="SubText"/>
@@ -112,10 +112,58 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-AJ-Fc2" userLabel="Border View">
-                                            <rect key="frame" x="0.0" y="300" width="390" height="1"/>
+                                            <rect key="frame" x="0.0" y="295" width="390" height="1"/>
                                             <color key="backgroundColor" name="Border"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="hUd-iS-5J9"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ウェブサイト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ0-uE-3zy" userLabel="WebSiteTitle Label">
+                                            <rect key="frame" x="19.999999999999993" y="316" width="122.33333333333331" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" name="BlackWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-e3-DmA" userLabel="WebSiteEdit Button">
+                                            <rect key="frame" x="313" y="307" width="57" height="42"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="20"/>
+                                            <inset key="titleEdgeInsets" minX="10" minY="10" maxX="-10" maxY="-10"/>
+                                            <state key="normal" title="編集">
+                                                <color key="titleColor" name="Blue"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="websiteEditButtonTouchDown:" destination="oY7-LN-45U" eventType="touchDown" id="eOH-Sg-7fT"/>
+                                                <action selector="websiteEditButtonTouchDragOutside:" destination="oY7-LN-45U" eventType="touchDragOutside" id="O8h-gF-0h6"/>
+                                                <action selector="websiteEditButtonTouchUpInside:" destination="oY7-LN-45U" eventType="touchUpInside" id="OTl-BD-pie"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-3Q-ozO">
+                                            <rect key="frame" x="20" y="348" width="350" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" name="BlackWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nba-su-b2d" userLabel="WebSite Button">
+                                            <rect key="frame" x="20" y="348" width="350" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="ウェブサイト">
+                                                <color key="titleColor" name="SubText"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="websiteButtonTouchUpInside:" destination="oY7-LN-45U" eventType="touchUpInside" id="f8q-6h-UlW"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U37-1Q-PmA" userLabel="Border View">
+                                            <rect key="frame" x="0.0" y="398" width="390" height="1"/>
+                                            <color key="backgroundColor" name="Border"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="Sry-tU-4bF"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAk-jx-Stk">
@@ -154,31 +202,45 @@
                                     </subviews>
                                     <color key="backgroundColor" name="WhiteBlack"/>
                                     <constraints>
+                                        <constraint firstItem="U37-1Q-PmA" firstAttribute="top" secondItem="rAe-3Q-ozO" secondAttribute="bottom" constant="20" id="0o7-Eh-vGI"/>
+                                        <constraint firstItem="nba-su-b2d" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="5Wy-9R-EIb"/>
                                         <constraint firstItem="tAk-jx-Stk" firstAttribute="centerY" secondItem="dhh-C6-2zH" secondAttribute="centerY" id="5k9-CL-tmu"/>
+                                        <constraint firstItem="nba-su-b2d" firstAttribute="top" secondItem="aZ0-uE-3zy" secondAttribute="bottom" constant="8" id="6FV-LZ-OG0"/>
+                                        <constraint firstItem="nba-su-b2d" firstAttribute="height" secondItem="rAe-3Q-ozO" secondAttribute="height" id="6zV-IB-RAH"/>
                                         <constraint firstAttribute="trailing" secondItem="b9o-KE-0dF" secondAttribute="trailing" constant="20" symbolic="YES" id="7Fm-L6-zGr"/>
+                                        <constraint firstItem="aZ0-uE-3zy" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="7Xm-9r-rmA"/>
                                         <constraint firstAttribute="trailing" secondItem="Gfg-MW-VuQ" secondAttribute="trailing" constant="20" id="8Ae-mx-x0u"/>
-                                        <constraint firstItem="Gfg-MW-VuQ" firstAttribute="top" secondItem="fpN-nK-gQ5" secondAttribute="bottom" constant="13" id="8el-nI-Kki"/>
+                                        <constraint firstItem="Gfg-MW-VuQ" firstAttribute="top" secondItem="fpN-nK-gQ5" secondAttribute="bottom" constant="8" id="8el-nI-Kki"/>
                                         <constraint firstItem="CIO-NM-Qob" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" id="Bhl-Cu-2T7"/>
                                         <constraint firstAttribute="trailing" secondItem="Luh-AJ-Fc2" secondAttribute="trailing" id="DMw-Nk-Zgu"/>
-                                        <constraint firstItem="pQ8-YJ-hqP" firstAttribute="top" secondItem="fpN-nK-gQ5" secondAttribute="bottom" constant="13" id="Dcv-cb-Am0"/>
+                                        <constraint firstItem="pQ8-YJ-hqP" firstAttribute="top" secondItem="fpN-nK-gQ5" secondAttribute="bottom" constant="8" id="Dcv-cb-Am0"/>
                                         <constraint firstItem="CIO-NM-Qob" firstAttribute="top" secondItem="QsF-GU-7ov" secondAttribute="bottom" constant="20" id="Eoe-L4-Kqu"/>
                                         <constraint firstAttribute="trailing" secondItem="CIO-NM-Qob" secondAttribute="trailing" id="Fij-EB-jdc"/>
+                                        <constraint firstItem="sBj-e3-DmA" firstAttribute="centerY" secondItem="aZ0-uE-3zy" secondAttribute="centerY" id="Iva-M5-UoG"/>
                                         <constraint firstItem="Gfg-MW-VuQ" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="Mfc-CZ-4P1"/>
                                         <constraint firstItem="Luh-AJ-Fc2" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" id="N2F-xA-0w6"/>
                                         <constraint firstItem="BFY-Jy-wfs" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="NiB-W8-xLi"/>
+                                        <constraint firstItem="U37-1Q-PmA" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" id="QAr-Lr-UJG"/>
+                                        <constraint firstAttribute="trailing" secondItem="U37-1Q-PmA" secondAttribute="trailing" id="QxB-oD-SOO"/>
+                                        <constraint firstItem="rAe-3Q-ozO" firstAttribute="top" secondItem="aZ0-uE-3zy" secondAttribute="bottom" constant="8" id="RnB-d6-E3b"/>
                                         <constraint firstItem="pQ8-YJ-hqP" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="SRT-eA-mCX"/>
                                         <constraint firstItem="QsF-GU-7ov" firstAttribute="top" secondItem="BFY-Jy-wfs" secondAttribute="bottom" constant="8" symbolic="YES" id="SXk-w7-5GZ"/>
                                         <constraint firstAttribute="trailing" secondItem="tAk-jx-Stk" secondAttribute="trailing" constant="50" id="Sct-yW-640"/>
                                         <constraint firstItem="QsF-GU-7ov" firstAttribute="top" secondItem="BFY-Jy-wfs" secondAttribute="bottom" constant="8" symbolic="YES" id="V1R-DE-fVs"/>
+                                        <constraint firstItem="rAe-3Q-ozO" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="ZRL-T6-zfc"/>
+                                        <constraint firstAttribute="trailing" secondItem="rAe-3Q-ozO" secondAttribute="trailing" constant="20" id="ZSY-nD-p6E"/>
                                         <constraint firstItem="BFY-Jy-wfs" firstAttribute="top" secondItem="dhh-C6-2zH" secondAttribute="top" constant="20" id="gw7-G9-nvz"/>
                                         <constraint firstItem="fpN-nK-gQ5" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="20" id="jNj-oq-1NT"/>
                                         <constraint firstItem="tAk-jx-Stk" firstAttribute="leading" secondItem="dhh-C6-2zH" secondAttribute="leading" constant="50" id="kFX-sH-kiX"/>
+                                        <constraint firstAttribute="trailing" secondItem="sBj-e3-DmA" secondAttribute="trailing" constant="20" id="kbd-p7-Wgm"/>
                                         <constraint firstItem="AH9-IW-6UI" firstAttribute="centerY" secondItem="fpN-nK-gQ5" secondAttribute="centerY" id="kuL-dP-NRc"/>
                                         <constraint firstItem="QsF-GU-7ov" firstAttribute="centerX" secondItem="dhh-C6-2zH" secondAttribute="centerX" id="mis-Lq-mQu"/>
                                         <constraint firstItem="fpN-nK-gQ5" firstAttribute="top" secondItem="CIO-NM-Qob" secondAttribute="bottom" constant="20" id="pMo-gJ-gX4"/>
                                         <constraint firstAttribute="trailing" secondItem="pQ8-YJ-hqP" secondAttribute="trailing" constant="20" id="pVJ-xK-mK1"/>
+                                        <constraint firstAttribute="trailing" secondItem="nba-su-b2d" secondAttribute="trailing" constant="20" id="pxP-CD-laK"/>
                                         <constraint firstItem="Luh-AJ-Fc2" firstAttribute="top" secondItem="pQ8-YJ-hqP" secondAttribute="bottom" constant="20" id="t4b-nK-HUg"/>
                                         <constraint firstItem="b9o-KE-0dF" firstAttribute="centerY" secondItem="BFY-Jy-wfs" secondAttribute="centerY" id="uEn-3m-RHx"/>
+                                        <constraint firstItem="aZ0-uE-3zy" firstAttribute="top" secondItem="Luh-AJ-Fc2" secondAttribute="bottom" constant="20" id="uW1-ql-pwf"/>
                                         <constraint firstItem="Gfg-MW-VuQ" firstAttribute="height" secondItem="pQ8-YJ-hqP" secondAttribute="height" id="w6F-Qe-QyZ"/>
                                         <constraint firstAttribute="trailing" secondItem="AH9-IW-6UI" secondAttribute="trailing" constant="20" symbolic="YES" id="wBJ-QH-OSb"/>
                                     </constraints>
@@ -220,6 +282,10 @@
                         <outlet property="userProfileImage" destination="QsF-GU-7ov" id="4s1-PP-ovi"/>
                         <outlet property="userProfileImageEditButton" destination="b9o-KE-0dF" id="Ckt-Sk-SJa"/>
                         <outlet property="userProfileImageTitleLabel" destination="BFY-Jy-wfs" id="LSC-1H-Ipg"/>
+                        <outlet property="websiteButton" destination="nba-su-b2d" id="bOH-9s-fHl"/>
+                        <outlet property="websiteEditButton" destination="sBj-e3-DmA" id="3a8-Z4-fU1"/>
+                        <outlet property="websiteLabel" destination="rAe-3Q-ozO" id="Ba5-BU-uCR"/>
+                        <outlet property="websiteTitleLabel" destination="aZ0-uE-3zy" id="JOL-9T-bSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwW-Zq-XI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

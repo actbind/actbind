@@ -35,6 +35,10 @@ final class PostSpotlightViewController: UIViewController, UIGestureRecognizerDe
         let name2: String
         let password: String
         let profileimageUrl: String
+        let website: String
+        let accountType: String
+        let accountCategory: String
+        let verification: String
     }
     
     static var allUsers: [Users] = []

@@ -148,6 +148,10 @@
 "jikosyoukai" = "הצגה עצמית";
 "jikosyoukaiwohennsyuu" = "ערוך הקדמה עצמית";
 "jikosyoukaiwonyuuryoku" = "הזן את ההקדמה העצמית שלך ...";
+"webusaito" = "אתר אינטרנט";
+"webusaitowohennsyuu" = "ערוך אתר";
+"webusaitowonyuuryoku" = "היכנס לאתר ...";
+"webusaitoera-" = "אנא הכנס לאתר הנכון.";
 "foro-" = "לעקוב אחר";
 "foro-tyuu" = "הבא";
 "forowa-" = "עוקבים";

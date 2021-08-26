@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ous-QQ-bSz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ous-QQ-bSz">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -126,12 +126,6 @@
                                 </items>
                                 <color key="tintColor" name="Blue"/>
                                 <color key="barTintColor" name="WhiteBlack"/>
-                                <toolbarAppearance key="standardAppearance" backgroundImageContentMode="scaleToFill">
-                                    <color key="backgroundColor" name="WhiteBlack"/>
-                                </toolbarAppearance>
-                                <toolbarAppearance key="scrollEdgeAppearance" backgroundImageContentMode="scaleToFill">
-                                    <color key="backgroundColor" name="WhiteBlack"/>
-                                </toolbarAppearance>
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vKl-TW-dRZ"/>

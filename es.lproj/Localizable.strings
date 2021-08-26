@@ -148,6 +148,10 @@
 "jikosyoukai" = "Presentación";
 "jikosyoukaiwohennsyuu" = "Editar autointroducción";
 "jikosyoukaiwonyuuryoku" = "Ingrese su auto-presentación ...";
+"webusaito" = "Sitio web";
+"webusaitowohennsyuu" = "Editar sitio web";
+"webusaitowonyuuryoku" = "Entrar en el sitio web ...";
+"webusaitoera-" = "Ingrese el sitio web correcto.";
 "foro-" = "Seguir";
 "foro-tyuu" = "siguiendo";
 "forowa-" = "Seguidor";

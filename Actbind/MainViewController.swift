@@ -29,6 +29,20 @@ final class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppVersionCompare.toAppStoreVersion { type in
+            switch type {
+            case .latest: break
+            case .old:
+                DispatchQueue.main.async {
+                    let storyBoard = UIStoryboard(name: "Update", bundle: nil)
+                    let nextVC = storyBoard.instantiateInitialViewController()
+                    self.present(nextVC!, animated: false) {}
+                }
+            case .error:
+                print("エラー")
+            }
+        }
+        
         delegate = self
 
         if let userDefaults = userDefaults {

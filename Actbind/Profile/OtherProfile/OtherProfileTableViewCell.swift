@@ -17,6 +17,9 @@ final class OtherProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var bioLabelTop: NSLayoutConstraint!
+    @IBOutlet weak var websiteButton: UIButton!
+    @IBOutlet weak var websiteButtonTop: NSLayoutConstraint!
+    @IBOutlet weak var websiteButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var followButtonRight: NSLayoutConstraint!
     @IBOutlet weak var followButtonLeft: NSLayoutConstraint!
@@ -35,8 +38,10 @@ final class OtherProfileTableViewCell: UITableViewCell {
         if let userDefaults = userDefaults {
             let myColor = userDefaults.string(forKey: "mycolor")
             if myColor == "Original" {
+                websiteButton.setTitleColor(UIColor(named: "Blue"), for: .normal)
                 // followButton.backgroundColor = UIColor(named: "Blue")
             } else {
+                websiteButton.setTitleColor(UIColor(named: myColor!), for: .normal)
                 // followButton.backgroundColor = UIColor(named: myColor!)
             }
     
@@ -52,9 +57,13 @@ final class OtherProfileTableViewCell: UITableViewCell {
             let name1 = user!.name1
             let name2 = user!.name2
             let name = name1 + " " + name2
+            let website = user!.website
+            let displayWebsite = String(website.dropFirst(8))
             
             nameLabel.text = name
             bioLabel.text = user!.bio
+            
+            websiteButton.setTitle(displayWebsite, for: .normal)
         }
         
         // followButton.setTitle("foro-".localized(), for: .normal)
@@ -64,6 +73,48 @@ final class OtherProfileTableViewCell: UITableViewCell {
         } else {
             bioLabelTop.constant = 8
         }
+        
+        if websiteButton.currentTitle == "" {
+            websiteButtonHeight.constant = 0
+            websiteButtonTop.constant = 0
+        } else {
+            websiteButtonHeight.constant = 15
+            websiteButtonTop.constant = 8
+        }
+    }
+    
+    @IBAction func websiteButtonTouchDown(_ sender: Any) {
+        if let userDefaults = userDefaults {
+            let myColor = userDefaults.string(forKey: "mycolor")
+
+            if myColor == "Original" {
+                websiteButton.backgroundColor = UIColor(named: "BlueHalf")
+            } else if myColor == "Red" {
+                websiteButton.backgroundColor = UIColor(named: "RedHalf")
+            } else if myColor == "Orange" {
+                websiteButton.backgroundColor = UIColor(named: "OrangeHalf")
+            } else if myColor == "Yellow" {
+                websiteButton.backgroundColor = UIColor(named: "YellowHalf")
+            } else if myColor == "Green" {
+                websiteButton.backgroundColor = UIColor(named: "GreenHalf")
+            } else if myColor == "Blue" {
+                websiteButton.backgroundColor = UIColor(named: "BlueHalf")
+            } else {
+                websiteButton.backgroundColor = UIColor(named: "PurpleHalf")
+            }
+        }
+    }
+    
+    @IBAction func websiteButtonTouchDragOutside(_ sender: Any) {
+        websiteButton.backgroundColor = UIColor.clear
+    }
+    
+    @IBAction func websiteButtonTouchUpInside(_ sender: Any) {
+        UISelectionFeedbackGenerator().selectionChanged()
+        
+        websiteButton.backgroundColor = UIColor.clear
+        
+        delegate?.goWeb(website: "https://" + websiteButton.currentTitle!)
     }
     
     @IBAction func followButtonTouchDown(_ sender: Any) {

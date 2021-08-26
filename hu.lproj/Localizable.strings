@@ -148,6 +148,10 @@
 "jikosyoukai" = "Bemutatkozás";
 "jikosyoukaiwohennsyuu" = "Saját bevezető szerkesztése";
 "jikosyoukaiwonyuuryoku" = "Adja meg önbevezetését ...";
+"webusaito" = "Weboldal";
+"webusaitowohennsyuu" = "Weboldal szerkesztése";
+"webusaitowonyuuryoku" = "Lépjen be a weboldalra ...";
+"webusaitoera-" = "Kérjük, adja meg a megfelelő webhelyet.";
 "foro-" = "Kövesse";
 "foro-tyuu" = "Következő";
 "forowa-" = "Követők";

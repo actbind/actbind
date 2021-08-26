@@ -244,6 +244,7 @@ extension MyProfileViewController: UITableViewDataSource {
             // ここからの内容がセルに反映される
             // 順番にcellの方のpostに送っていく
             profileCell.profile = Profile.allProfile[indexPath.row]
+            profileCell.delegate = self
             // ここまで
             return profileCell
         } else {
@@ -266,6 +267,18 @@ extension MyProfileViewController: UITableViewDataSource {
                 return profilePostCell
             }
         }
+    }
+    
+    func goWeb(website: String) {
+        let storyBoard = UIStoryboard(name: "Web", bundle: nil)
+        let nextVC = storyBoard.instantiateInitialViewController()
+        let nav = (nextVC as? UINavigationController)
+        let vc = (nav?.topViewController as! WebViewController)
+        
+        // 値の設定
+        vc.weburl = website
+        
+        present(nextVC!, animated: true) {}
     }
     
     func apiLikePost(userId: Int, postId: Int) {

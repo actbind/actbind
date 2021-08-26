@@ -47,13 +47,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAs-uc-d0I">
                                 <rect key="frame" x="20" y="272" width="350" height="48"/>
-                                <color key="backgroundColor" name="EnabledButton"/>
+                                <color key="backgroundColor" name="Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="4BZ-9M-wYo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="保存">
-                                    <color key="titleColor" name="EnabledButtonText"/>
+                                    <color key="titleColor" name="White"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -106,16 +106,16 @@
                         <constraints>
                             <constraint firstItem="hdo-ee-gxw" firstAttribute="trailing" secondItem="xAs-uc-d0I" secondAttribute="trailing" constant="20" id="27s-Ie-Z2Y"/>
                             <constraint firstItem="zxb-L6-UFr" firstAttribute="top" secondItem="7wt-6e-CrV" secondAttribute="bottom" constant="8" symbolic="YES" id="3CA-oA-igO"/>
-                            <constraint firstItem="PtE-ZH-Rmy" firstAttribute="leading" secondItem="hdo-ee-gxw" secondAttribute="leading" constant="20" id="45H-lp-dvp"/>
                             <constraint firstItem="hdo-ee-gxw" firstAttribute="trailing" secondItem="PtE-ZH-Rmy" secondAttribute="trailing" constant="20" id="52q-xi-ysN"/>
                             <constraint firstItem="PtE-ZH-Rmy" firstAttribute="top" secondItem="hdo-ee-gxw" secondAttribute="top" constant="20" id="A8T-ca-khw"/>
                             <constraint firstItem="hdo-ee-gxw" firstAttribute="trailing" secondItem="7wt-6e-CrV" secondAttribute="trailing" constant="20" id="AJm-xD-EJc"/>
                             <constraint firstItem="hdo-ee-gxw" firstAttribute="trailing" secondItem="2hp-e9-dGO" secondAttribute="trailing" constant="50" id="CmO-bF-JAs"/>
                             <constraint firstItem="2hp-e9-dGO" firstAttribute="centerY" secondItem="r7m-Iq-nG8" secondAttribute="centerY" id="JDo-yw-0pM"/>
                             <constraint firstItem="xAs-uc-d0I" firstAttribute="top" secondItem="zxb-L6-UFr" secondAttribute="bottom" constant="50" id="OhZ-EJ-goU"/>
+                            <constraint firstItem="PtE-ZH-Rmy" firstAttribute="leading" secondItem="hdo-ee-gxw" secondAttribute="leading" constant="20" id="ThB-0K-MrW"/>
                             <constraint firstItem="xAs-uc-d0I" firstAttribute="leading" secondItem="hdo-ee-gxw" secondAttribute="leading" constant="20" id="Tne-Bn-aXa"/>
                             <constraint firstItem="2hp-e9-dGO" firstAttribute="leading" secondItem="hdo-ee-gxw" secondAttribute="leading" constant="50" id="WZv-bj-qSL"/>
-                            <constraint firstItem="7wt-6e-CrV" firstAttribute="top" secondItem="PtE-ZH-Rmy" secondAttribute="bottom" constant="8" symbolic="YES" id="iwW-ag-MdO"/>
+                            <constraint firstItem="7wt-6e-CrV" firstAttribute="top" secondItem="PtE-ZH-Rmy" secondAttribute="bottom" constant="8" id="fYe-tx-REB"/>
                             <constraint firstItem="7wt-6e-CrV" firstAttribute="leading" secondItem="hdo-ee-gxw" secondAttribute="leading" constant="20" id="oSu-hh-ISF"/>
                             <constraint firstItem="hdo-ee-gxw" firstAttribute="trailing" secondItem="zxb-L6-UFr" secondAttribute="trailing" constant="20" id="taU-L6-HMn"/>
                         </constraints>
@@ -157,14 +157,14 @@
         <namedColor name="BlackWhite">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="EnabledButton">
-            <color red="0.77300000190734863" green="0.77300000190734863" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="EnabledButtonText">
-            <color red="0.89399999380111694" green="0.89399999380111694" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Blue">
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextField">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WhiteBlack">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

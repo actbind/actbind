@@ -1,23 +1,20 @@
 //
-//  BioEditViewController.swift
+//  WebsiteEditViewController.swift
 //  Actbind
 //
-//  Created by 柿本海斗 on 2021/03/02.
+//  Created by 柿本海斗 on 2021/08/26.
 //
 
-import AudioToolbox
 import UIKit
-import UITextView_Placeholder
 
-final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
+final class WebsiteEditViewController: UIViewController, UIGestureRecognizerDelegate {
     let userDefaults = UserDefaults(suiteName: "group.com.actbind")
     let api = KeyManager().getValue(key: "API") as? String
-
+    
     @IBOutlet weak var navigationBarTitle: UINavigationItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var bioTitleLabel: UILabel!
-    @IBOutlet weak var bioTextView: UITextView!
-    @IBOutlet weak var textCountLabel: UILabel!
+    @IBOutlet weak var websiteTitleLabel: UILabel!
+    @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var saveButtonRight: NSLayoutConstraint!
     @IBOutlet weak var saveButtonLeft: NSLayoutConstraint!
@@ -25,58 +22,45 @@ final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestu
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var checkmarkImage: UIImageView!
     @IBOutlet weak var activityLabel: UILabel!
-
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorTextLabel: UILabel!
+    @IBOutlet weak var errorViewBottom: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
-        bioTextView.delegate = self
-
-        navigationBarTitle.title = "jikosyoukaiwohennsyuu".localized()
+        navigationBarTitle.title = "webusaitowohennsyuu".localized()
 
         if let userDefaults = userDefaults {
             let myColor = userDefaults.string(forKey: "mycolor")
-            let bio = userDefaults.string(forKey: "bio")
+            let website = userDefaults.string(forKey: "website")
 
             if myColor == "Original" {
                 backButton.tintColor = UIColor(named: "BlackWhite")
-                bioTextView.tintColor = UIColor(named: "Blue")
+                websiteTextField.tintColor = UIColor(named: "Blue")
                 saveButton.backgroundColor = UIColor(named: "Blue")
             } else {
                 backButton.tintColor = UIColor(named: myColor!)
-                bioTextView.tintColor = UIColor(named: myColor!)
+                websiteTextField.tintColor = UIColor(named: myColor!)
                 saveButton.backgroundColor = UIColor(named: myColor!)
             }
-
-            if bio == "" {
-                bioTextView.text = ""
-            } else {
-                bioTextView.text = bio
-            }
             
-            textCountLabel.text = String(bio!.count) + "/100"
-        }
-
-        backButton.image = UIImage(named: "back")
-
-        bioTitleLabel.text = "jikosyoukai".localized()
-
-        if let userDefaults = userDefaults {
-            let bio = userDefaults.string(forKey: "bio")
-            if bio == "" {
-                bioTextView.placeholder = "jikosyoukaiwonyuuryoku".localized()
+            if website == "" {
+                websiteTextField.text = ""
             } else {
-                bioTextView.placeholder = ""
+                websiteTextField.text = website
             }
         }
-        bioTextView.placeholderColor = UIColor(named: "TextFieldText")
-        bioTextView.textContainerInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-        bioTextView.sizeToFit()
-        bioTextView.layer.borderColor = UIColor.lightGray.cgColor
-        bioTextView.layer.borderWidth = 1.0
-
+        
+        backButton.image = UIImage(named: "back")
+        
+        websiteTitleLabel.text = "webusaito".localized()
+        
+        websiteTextField.uiTextFieldSetting(placeholder: "webusaitowonyuuryoku".localized())
+        
         saveButton.setTitle("hozonn".localized(), for: .normal)
         
         activityView.cornerAll(value: 16, fulcrum: "")
@@ -84,8 +68,11 @@ final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestu
         
         checkmarkImage.image = UIImage(named: "")
         activityLabel.text = "hennkounaiyousetteityuu".localized()
+        
+        errorTextLabel.text = ""
+        errorViewBottom.constant = -60
     }
-
+    
     // 画面に表示される直前に呼ばれます。
     // viewDidLoadとは異なり毎回呼び出されます。
     override func viewWillAppear(_ animated: Bool) {
@@ -96,96 +83,102 @@ final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestu
             tabBarController?.selectedViewController = UINavigationController
         }
     }
-
-    func textViewDidChange(_ textView: UITextView) {
-        let bioText = bioTextView.text
-        let bioCount = bioTextView.text.count
-        textCountLabel.text = String(bioCount) + "/100"
-
-        if let userDefaults = userDefaults {
-            let myColor = userDefaults.string(forKey: "mycolor")
-            let bio = userDefaults.string(forKey: "bio")
-
-            if bioCount < 100 {
-                textCountLabel.textColor = UIColor(named: "BlackWhite")
-                if bioCount == 90 {
-                    let generator = UINotificationFeedbackGenerator()
-                    generator.notificationOccurred(.warning)
-                }
-                if bio == bioText {
-                    saveButton.isEnabled = false
-                    saveButton.setTitleColor(UIColor(named: "EnabledButtonText"), for: .normal)
-                    saveButton.backgroundColor = UIColor(named: "EnabledButton")
-                } else {
-                    saveButton.isEnabled = true
-                    saveButton.setTitleColor(UIColor(named: "White"), for: .normal)
-                    if myColor == "Original" {
-                        saveButton.backgroundColor = UIColor(named: "Blue")
-                    } else {
-                        saveButton.backgroundColor = UIColor(named: myColor!)
-                    }
-                }
-            } else if bioCount == 100 {
-                textCountLabel.textColor = UIColor.label
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.error)
-
-                if bio == bioText {
-                    saveButton.isEnabled = false
-                    saveButton.setTitleColor(UIColor(named: "EnabledButtonText"), for: .normal)
-                    saveButton.backgroundColor = UIColor(named: "EnabledButton")
-                } else {
-                    saveButton.isEnabled = true
-                    saveButton.setTitleColor(UIColor(named: "White"), for: .normal)
-                    if myColor == "Original" {
-                        saveButton.backgroundColor = UIColor(named: "Blue")
-                    } else {
-                        saveButton.backgroundColor = UIColor(named: myColor!)
-                    }
-                }
-            } else {
-                textCountLabel.textColor = UIColor.systemPink
-                saveButton.isEnabled = false
-                saveButton.setTitleColor(UIColor(named: "EnabledButtonText"), for: .normal)
-                saveButton.backgroundColor = UIColor(named: "EnabledButton")
-            }
-        }
-    }
-
-    @IBAction func saveButtonTouchDown(_ sender: Any) {
-        UIButton().uiButtonTapOn(item: saveButton, itemRight: saveButtonRight, itemLeft: saveButtonLeft)
-    }
-
-    @IBAction func saveButtonTouchDragOutside(_ sender: Any) {
-        UIButton().uiButtonTapOff(item: saveButton, itemRight: saveButtonRight, itemLeft: saveButtonLeft)
-    }
-
+    
     // キーボード以外をタップでキーボードが閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    // 完了キーをタップでキーボードが閉じる
+    @IBAction func websiteTextFieldDidEndOnExit(_ sender: Any) {}
+    
+    @IBAction func websiteTextFieldEditingDidBegin(_ sender: Any) {
+        if let userDefaults = userDefaults {
+            let myColor = userDefaults.string(forKey: "mycolor")
+            
+            if myColor == "Original" || myColor == "Blue" {
+                websiteTextField.layer.borderColor = UIColor.systemBlue.cgColor
+            } else if myColor == "Red" {
+                websiteTextField.layer.borderColor = UIColor.blue.cgColor
+            } else if myColor == "Orange" {
+                websiteTextField.layer.borderColor = UIColor.orange.cgColor
+            } else if myColor == "Yellow" {
+                websiteTextField.layer.borderColor = UIColor.yellow.cgColor
+            } else if myColor == "Green" {
+                websiteTextField.layer.borderColor = UIColor.green.cgColor
+            } else {
+                websiteTextField.layer.borderColor = UIColor.purple.cgColor
+            }
+        }
+    }
 
+    @IBAction func websiteTextFieldEditingDidEnd(_ sender: Any) {
+        websiteTextField.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    @IBAction func saveButtonTouchDown(_ sender: Any) {
+        UIButton().uiButtonTapOn(item: saveButton, itemRight: saveButtonRight, itemLeft: saveButtonLeft)
+    }
+    
+    @IBAction func saveButtonTouchDragOutside(_ sender: Any) {
+        UIButton().uiButtonTapOff(item: saveButton, itemRight: saveButtonRight, itemLeft: saveButtonLeft)
+    }
+    
     @IBAction func saveButtonTouchUpInside(_ sender: Any) {
         UISelectionFeedbackGenerator().selectionChanged()
         
         UIButton().uiButtonTapOff(item: saveButton, itemRight: saveButtonRight, itemLeft: saveButtonLeft)
         
+        view.endEditing(true)
+        
+        if websiteTextField.text!.prefix(7) == "http://" {
+            websiteTextField.text = "https://" + websiteTextField.text!.dropFirst(7)
+        }
+        
+        let websiteMini = websiteTextField.text!.lowercased()
+        
         if let userDefaults = userDefaults {
-            let bio = userDefaults.string(forKey: "bio")
+            let website = userDefaults.string(forKey: "website")
             
-            if bioTextView.text == bio {
-                navigationController?.popViewController(animated: true)
-            } else {
-                saveButton.isEnabled = false
-                navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-                backButton.isEnabled = false
-                bioTextView.isEditable = false
-                activityView.isHidden = false
-                activityIndicator.startAnimating()
+            if websiteMini == "" {
+                if websiteMini == website {
+                    navigationController?.popViewController(animated: true)
+                } else {
+                    saveButton.isEnabled = false
+                    navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+                    backButton.isEnabled = false
+                    activityView.isHidden = false
+                    activityIndicator.startAnimating()
                 
-                // データ登録・更新
-                let userId = userDefaults.integer(forKey: "userid")
-                apiBio(userId: userId, value: bioTextView.text)
+                    // データ登録・更新
+                
+                    let userId = userDefaults.integer(forKey: "userid")
+                    apiWebsite(userId: userId, value: websiteTextField.text!)
+                }
+            } else {
+                // URLが正しい時
+                if UrlViewController.isValidUrl(websiteTextField.text!) {
+                    if websiteMini == website {
+                        navigationController?.popViewController(animated: true)
+                    } else {
+                        saveButton.isEnabled = false
+                        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+                        backButton.isEnabled = false
+                        activityView.isHidden = false
+                        activityIndicator.startAnimating()
+                
+                        // データ登録・更新
+                
+                        let userId = userDefaults.integer(forKey: "userid")
+                        apiWebsite(userId: userId, value: websiteTextField.text!)
+                    }
+                } else {
+                    websiteTextField.layer.borderColor = UIColor.systemPink.cgColor
+                    errorTextLabel.text = "webusaitoera-".localized()
+                    errorView.errorViewTransition(value: 114)
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.error)
+                }
             }
         }
     }
@@ -196,7 +189,7 @@ final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestu
         navigationController?.popViewController(animated: true)
     }
     
-    func apiBio(userId: Int, value: String) {
+    func apiWebsite(userId: Int, value: String) {
         let url = URL(string: api! + "userchange")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST" // Postリクエストを送る(このコードがないとGetリクエストになる)
@@ -207,12 +200,12 @@ final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestu
         struct UserChange: Codable {
             let changeKey: String
             let userId: Int
-            let bio: String
+            let website: String
         }
         
         let encoder = JSONEncoder()
         
-        let body = UserChange(changeKey: "bio", userId: userId, bio: value)
+        let body = UserChange(changeKey: "website", userId: userId, website: value)
         
         do {
             // EncodeしてhttpBodyに設定
@@ -242,7 +235,7 @@ final class BioEditViewController: UIViewController, UITextViewDelegate, UIGestu
                 print(json)
                 DispatchQueue.main.async {
                     if let userDefaults = self.userDefaults {
-                        userDefaults.setValue(value, forKeyPath: "bio")
+                        userDefaults.setValue(value, forKeyPath: "website")
                     }
                     
                     self.apiSuccess()
